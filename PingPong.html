@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<canvas id="gameCanvas" width="800" height="600">
+	</canvas> <!-- init graphics and assign a block of screen for the game, including the height and width -->
+	<script type="text/javascript">
+
+		var canvas; // grabs info regarding the dimension for the game area
+		var	canvasContext; // underlying graphic info of the game are to be used to draw elements on the game area
+
+
+		/* declaring the ball coordinates to be used later for ball movement*/
+		var ballXP = 50; 
+		var speedXP = 8;
+		var ballYP = 50;
+		var speedYP = 4;
+
+		var playerPaddle = 250;
+		var computerPaddle = 250;
+		var computerPaddle = 250;
+
+		var playerScore = 0;
+		var computerScore = 0;
+		var gameReset = false;
+
+		const PADDLE_INIT_HEIGHT = 100; // while reseting the game
+		const PADDLE_WIDTH = 15;
+		const WIN_SCORE = 5;
+
+
+		window.onload = function(){
+			canvas = document.getElementById('gameCanvas'); // grabs the canvas from html
+
+			canvasContext = canvas.getContext('2d'); //
+
+			var fps = 25;
+			setInterval(function(){
+				moveMents();
+				drawElements();
+			}, 1000/fps); // to see the change if the ball is moving or not; gives u fps in a simple way
+			//drawElements();
+			canvas.addEventListener('mousedown', handleMouseClick);
+			canvas.addEventListener('mousemove', function(evt){
+				var mousePos = playerMouse(evt);
+				playerPaddle = mousePos.y - (PADDLE_INIT_HEIGHT/2);
+				//computerPaddle = mousePos.y - (PADDLE_INIT_HEIGHT/2); //this is just for testing purpose
+			});
+		}; //runs the function when the window is done loading
+
+
+		function drawElements(){
+
+
+			/*canvasContext.fillStyle = 'black';
+			canvasContext.fillRect(0,0,canvas.width, canvas.height); */
+
+			/*above code can be compressed by using the function colorRect which is a user defined to compress the code*/
+
+			colorRect(0, 0, canvas.width, canvas.height, 'black');
+			drawNet();
+			if(gameReset){
+				canvasContext.fillStyle = 'white';
+				canvasContext.fillText('Click To Continue', canvas.width/2 - 40, 515);
+
+				if(playerScore >= WIN_SCORE){
+					canvasContext.fillText('YOU WIN', canvas.width/2 - 30, canvas.height/2 + 10);
+
+				}
+				else if(computerScore >= WIN_SCORE){
+						canvasContext.fillText('YOU LOSE', canvas.width/2 - 30, canvas.height/2 + 10);
+				
+				}
+				
+				return;
+			} // this line compresses the above two lines in one
+
+			/*making paddles to play on each side*/
+
+			/*
+			canvasContext.fillStyle = 'red';  // the player
+			canvasContext.fillRect(785,bytheMouse,15, 100);
+			canvasContext.fillStyle = 'blue'; // the AI
+			canvasContext.fillRect(0,bytheAI,15, 100);
+			*/
+			colorRect(canvas.width - PADDLE_WIDTH, playerPaddle, PADDLE_WIDTH, PADDLE_INIT_HEIGHT, 'red') // the player code compressed
+			colorRect(0, computerPaddle, PADDLE_WIDTH, PADDLE_INIT_HEIGHT, 'blue') // the computer AI code compressed
+
+			colorCircle(ballXP, ballYP, 10, 'white'); // the ball
+
+			canvasContext.fillText('COMPUTER :- ' + computerScore, 100, 100);
+			canvasContext.fillText('YOU :- ' + playerScore, canvas.width-100, 100);
+
+
+
+		} //block to filling all the elements of the game including the game area
+
+		function moveMents(){
+
+			if(gameReset){
+				return;
+			}
+			computerMovement();
+			ballXP = ballXP + speedXP;
+			if(ballXP < 0){
+				if(ballYP > computerPaddle && ballYP < computerPaddle + PADDLE_INIT_HEIGHT){
+					speedXP = -speedXP;
+
+					/*control the ball angle by changing the Y-axis speed and where it hits the paddle */
+					var deltaY = ballYP - (computerPaddle + PADDLE_INIT_HEIGHT/2);
+					speedYP = deltaY * 0.20;
+			}
+				else{
+					playerScore++;
+					ballReset();
+				}
+			}
+
+			if(ballXP > canvas.width){
+				if(ballYP > playerPaddle && ballYP < playerPaddle + PADDLE_INIT_HEIGHT){
+					speedXP = -speedXP;
+					var deltaY = ballYP - (playerPaddle + PADDLE_INIT_HEIGHT/2);
+					speedYP = deltaY * 0.20;
+				}
+				else{
+					computerScore++; // must be before ball reset
+					ballReset();
+				}
+
+			}
+
+			ballYP = ballYP + speedYP;
+			if(ballYP > canvas.height || ballYP < 0){
+				speedYP = -speedYP;
+			}
+		}
+
+
+		function colorRect(xPosition, yPosition, width, height, elemColor){
+			canvasContext.fillStyle = elemColor;
+			canvasContext.fillRect(xPosition, yPosition, width, height);
+		}
+
+		function colorCircle(centerX, centerY, radius, ballColor){
+			canvasContext.fillStyle = ballColor;
+			canvasContext.beginPath();
+			canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
+			canvasContext.fill();
+		}
+
+		/* this event fires when the mouse moves */
+		function playerMouse(evt){
+
+			var rect = canvas.getBoundingClientRect(); // this gets the black game area where the game is currently rendered
+			var root = document.documentElement;
+			var mouseX = evt.clientX - rect.left - root.scrollLeft;
+			var mouseY = evt.clientY - rect.top - root.scrollTop;
+			return{
+				x:mouseX,
+				y:mouseY
+			};
+		}
+
+		function ballReset(){
+			/*game reset condition*/
+			if(playerScore >= WIN_SCORE || computerScore >= WIN_SCORE){
+				gameReset = true;
+			}
+			/*set reset*/
+			ballXP = canvas.width/2;
+			ballYP = canvas.height/2;
+			speedXP = -speedXP;
+		}
+
+		function computerMovement(){
+			var computerPaddleCenter = computerPaddle + (PADDLE_INIT_HEIGHT/2);
+			if(computerPaddleCenter < ballYP-30){
+				computerPaddle += 5;
+			}	
+			else if(computerPaddleCenter > ballYP+30){
+				computerPaddle -= 5;
+			}
+		}
+
+		function handleMouseClick(evt){
+			if(gameReset){
+				computerScore = 0;
+				playerScore = 0;
+				gameReset = false;
+			}
+		}
+
+		function drawNet(){
+			for(var i = 0; i <= canvas.height; i+=40){
+				colorRect(canvas.width/2-1, i, 2, 20, 'yellow');
+			}
+		}
+
+		
+	</script>
+
+</body>
+</html>
