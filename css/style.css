@@ -10182,7 +10182,7 @@ body .KW_progressContainer {
   position: fixed;
   top: 0px;
   overflow: hidden;
-  background-color: #212121;
+  background-color: #424242;
   content: "";
   display: table;
   table-layout: fixed;
@@ -10449,7 +10449,7 @@ header {
   right: 0;
   z-index: 9;
   margin: 0 auto;
-  background-color: #ffffff0f;
+  background-color: #ffffff33;
 }
 
 @media (max-width: 767.98px) {
