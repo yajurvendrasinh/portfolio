@@ -11018,15 +11018,15 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
 
 @media (max-width: 991.98px) {
   .wrap .about-desc .bold-text {
-    display: none;
+    left: 40px;
   }
 }
 
-@media (max-width: 767.98px) {
+/* @media (max-width: 767.98px) {
   .wrap .about-desc .bold-text {
     display: none;
   }
-}
+} */
 
 .profile {
   margin-bottom: 5em;
