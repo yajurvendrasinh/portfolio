@@ -11362,6 +11362,11 @@ textarea.form-control {
   color: #fff;
 }
 
+.ftco-footer-social li .no-click {
+  pointer-events: none;
+  cursor: none;
+}
+
 .footer-small-nav>li {
   display: inline-block;
 }
