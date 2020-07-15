@@ -68,7 +68,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  letter-spacing: 3px;
+  letter-spacing: .1em;
 }
 
 [tabindex="-1"]:focus {
@@ -6038,7 +6038,7 @@ button.close {
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: 0.1em;
   word-break: normal;
   word-spacing: normal;
   white-space: normal;
@@ -6151,7 +6151,7 @@ button.close {
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: .1em;
   word-break: normal;
   word-spacing: normal;
   white-space: normal;
@@ -10473,7 +10473,7 @@ header .folio-navbar-brand .folio-logo {
   text-transform: uppercase;
   color: #fff;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: .1em;
   padding: 5px;
   display: inline-block;
   text-align: center;
@@ -10773,7 +10773,7 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: .1em;
   display: inline-block;
   position: relative;
 }
@@ -10803,14 +10803,14 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: .1em;
 }
 
 .owl-carousel.home-slider .slider-item .slider-text p a.scroll {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: .1em;
 }
 
 .owl-carousel.home-slider .slider-item .slider-text p strong {
@@ -10824,7 +10824,7 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
 .owl-carousel.home-slider .slider-item .slider-text .breadcrumbs {
   text-transform: uppercase;
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: .1em;
 }
 
 .owl-carousel.home-slider .slider-item .slider-text .breadcrumbs span {
@@ -10972,7 +10972,7 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
 
 .about-section h2 {
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: .1em;
 }
 
 @media (max-width: 767.98px) {
@@ -11005,9 +11005,9 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
   right: 0;
   bottom: 0;
   font-weight: 700 !important;
-  color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: .1em;
 }
 
 @media (min-width: 992px) {
@@ -11021,12 +11021,6 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
     left: 40px;
   }
 }
-
-/* @media (max-width: 767.98px) {
-  .wrap .about-desc .bold-text {
-    display: none;
-  }
-} */
 
 .profile {
   margin-bottom: 5em;
@@ -11223,7 +11217,7 @@ textarea.form-control {
 .ftco-tab-nav li a {
   text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   color: #ccc;
   border: 2px solid #ccc;
   border-radius: 0 !important;
@@ -11247,7 +11241,7 @@ textarea.form-control {
 .ftco-section .ftco-sub-title {
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: .5em;
+  letter-spacing: .1em;
   color: #d4d4d4;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
@@ -11446,7 +11440,7 @@ textarea.form-control {
 
 .heading-section span {
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: .1em;
 }
 
 .heading-section h2 {
