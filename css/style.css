@@ -10764,7 +10764,7 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
   bottom: 0;
   font-weight: 700 !important;
   font-size: 100px;
-  color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.1);
 }
 
 .owl-carousel.home-slider .slider-item .slider-text h1 {
@@ -11005,7 +11005,7 @@ header .folio-navbar-brand .folio-logo:active, header .folio-navbar-brand .folio
   right: 0;
   bottom: 0;
   font-weight: 700 !important;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
   letter-spacing: .1em;
 }
