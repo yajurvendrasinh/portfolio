@@ -1,19 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-	<title>Untitled</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Little Fighter — Game animation / design</title>
 <!--Adobe Edge Runtime-->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <script type="text/javascript" charset="utf-8" src="content_creation_edgePreload.js"></script>
-    <style>
-        .edgeLoad-EDGE-455333329 { visibility:hidden; }
-    </style>
+	<script type="text/javascript" charset="utf-8" src="content_creation_edgePreload.js"></script>
+	<style>
+		* { box-sizing: border-box; }
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background: #000;
+		}
+		html { height: 100dvh; height: 100vh; }
+		body {
+			min-height: 100dvh;
+			min-height: 100vh;
+			width: 100vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		/* Edge wraps Stage in flow-wrapper > center-wrapper; give wrapper full viewport so scale-to-fit uses correct size */
+		.flow-wrapper {
+			width: 100% !important;
+			height: 100% !important;
+			min-height: 100dvh;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.center-wrapper {
+			flex-shrink: 0;
+		}
+		.edgeLoad-EDGE-455333329 { visibility: hidden; }
+		#Stage {
+			display: block;
+		}
+	</style>
 <!--Adobe Edge Runtime End-->
-
 </head>
-<body style="margin:0;padding:0;">
-	<div id="Stage" class="EDGE-455333329">
-	</div>
+<body>
+	<div id="Stage" class="EDGE-455333329" role="application" aria-label="Little Fighter animation. Use buttons to start, punch, run, and jump."></div>
+	<script>
+		// Force Edge to recalculate scale after full-viewport CSS has applied
+		window.addEventListener('load', function() {
+			setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 100);
+		});
+	</script>
 </body>
 </html>

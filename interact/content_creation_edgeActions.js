@@ -7,7 +7,24 @@
 *
 ***********************/
 (function($, Edge, compId){
-var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
+var Composition = Edge.Composition, Symbol = Edge.Symbol;
+
+function getStageSymbol(sym) {
+  if (sym.getSymbolTypeName() === 'stage') return sym;
+  var comp = sym.getComposition();
+  return comp && comp.getStage ? comp.getStage() : null;
+}
+
+function restartStage(sym) {
+  var stage = getStageSymbol(sym);
+  if (!stage) return;
+  stage.stop();
+  stage.seekTimeline('Default Timeline', 0, {});
+  setTimeout(function() {
+    stage.play('CloudStart');
+  }, 50);
+}
+
 //Edge symbol: 'stage'
 (function(symbolName) {
 
@@ -34,9 +51,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       //Edge binding end
 
       Symbol.bindElementAction(compId, symbolName, "${_START3}", "click", function(sym, e) {
-         // insert code for mouse click here
-         sym.play("CloudStart");
-
+         restartStage(sym);
       });
       //Edge binding end
 
@@ -92,10 +107,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    (function(symbolName) {   
    
       Symbol.bindElementAction(compId, symbolName, "${_StartText}", "click", function(sym, e) {
-         // insert code for mouse click here
+         restartStage(sym);
          sym.play("StartClick");
          sym.play("Cloud");
-
       });
       //Edge binding end
 

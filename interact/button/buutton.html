@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-	<title>Untitled</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Button — Edge animation</title>
 <!--Adobe Edge Runtime-->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <script type="text/javascript" charset="utf-8" src="buutton_edgePreload.js"></script>
-    <style>
-        .edgeLoad-EDGE-535223631 { visibility:hidden; }
-    </style>
+	<script type="text/javascript" charset="utf-8" src="buutton_edgePreload.js"></script>
+	<style>
+		* { box-sizing: border-box; }
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background: #000;
+		}
+		html { height: 100dvh; height: 100vh; }
+		body { min-height: 100dvh; min-height: 100vh; position: relative; }
+		.edgeLoad-EDGE-535223631 { visibility: hidden; }
+		#Stage {
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+			margin: auto;
+		}
+	</style>
 <!--Adobe Edge Runtime End-->
-
 </head>
-<body style="margin:0;padding:0;">
-	<div id="Stage" class="EDGE-535223631">
-	</div>
+<body>
+	<div id="Stage" class="EDGE-535223631" role="application" aria-label="Button animation"></div>
 </body>
 </html>
