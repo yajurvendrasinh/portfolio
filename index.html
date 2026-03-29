@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Gohil Yajurvendrasinh | Portfolio</title>
+    <title>Gohil Yajurvendrasinh | Senior Product Designer</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta
+      name="description"
+      content="Product designer who designs and builds. Design systems, UX, and front-end at Roku, Levi's, and Apple. Strategy, craft, and hands-on implementation for impact."
+    />
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -27,16 +31,31 @@
     <link rel="stylesheet" href="css/icomoon.css" />
     <link rel="stylesheet" href="css/particles.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Redesign/taste skill overrides: premium typography, no pure black, viewport stability, a11y */
+      body { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; }
+      .folio-page { --folio-black: #0f0f0f; --folio-text: #1a1a1a; }
+      .js-fullheight { min-height: 100dvh; }
+      html { scroll-behavior: smooth; }
+      .folio-logo:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+      a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+      .skip-link { position: absolute; top: -3rem; left: 0.5rem; z-index: 9999; padding: 0.5rem 1rem; background: var(--folio-black, #0f0f0f); color: #fff; font-size: 0.875rem; }
+      .skip-link:focus { top: 0.5rem; }
+      .folio-logo { transition: opacity 0.2s ease, transform 0.2s ease; }
+      .folio-logo:hover { opacity: 0.85; }
+      .folio-logo:active { transform: scale(0.98); }
+    </style>
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="KW_progressContainer">
       <div class="KW_progressBar"></div>
     </div>
     <div class="page">
-      <div id="folio-page">
+      <div id="folio-page" class="folio-page">
         <header>
-          <div class="container">
+          <nav class="container" aria-label="Main">
             <div class="row">
               <div class="col-md-12">
                 <div class="folio-navbar-brand">
@@ -44,21 +63,24 @@
                     href="https://www.linkedin.com/in/ygohil/"
                     class="my-2 mr-3 folio-logo"
                     target="_blank"
-                    ><span class="ion-social-linkedin-outline"></span>
-                    Linkedin</a
+                    rel="noopener noreferrer"
+                    ><span class="ion-social-linkedin-outline" aria-hidden="true"></span>
+                    LinkedIn</a
                   >
                   <a
-                    href="YajurG_X.pdf"
+                    href="YajurG_AD.html"
                     class="my-2 mr-3 folio-logo"
                     target="_blank"
-                    ><span class="ion-document-text"></span> Resume</a
+                    rel="noopener noreferrer"
+                    ><span class="ion-document-text" aria-hidden="true"></span> Resume</a
                   >
                 </div>
               </div>
             </div>
-          </div>
+          </nav>
         </header>
-        <section class="particles-container">
+        <main id="main-content">
+        <section class="particles-container" aria-hidden="true">
           <div id="particles-js"></div>
         </section>
         <section class="home-slider owl-carousel js-fullheight">
@@ -73,7 +95,7 @@
                   class="col-md-12 ftco-animate"
                   data-scrollax=" properties: { translateY: '70%' }"
                 >
-                  <p class="intro-greeting">Namastey! I'm</p>
+                  <p class="intro-greeting">Hi, I'm</p>
                   <h1
                     class="mb-3"
                     data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
@@ -95,15 +117,15 @@
                   class="col-md-12 ftco-animate"
                   data-scrollax=" properties: { translateY: '70%' }"
                 >
-                  <p class="intro-greeting">I'M A CREATIVE</p>
+                  <p class="intro-greeting">Product designer who designs and builds</p>
                   <h1
                     class="mb-3"
                     data-scrollax="properties: {translateY: '30%', opacity: 1.6}"
                   >
-                    Front End Developer
+                    Design systems, UX &amp; front-end
                   </h1>
                   <p>
-                    and.... a certified fitness trainer and a part-time musician
+                    Roku, Levi's, Apple. I shape the product and help ship it. Also a certified fitness trainer and part-time musician.
                   </p>
                 </div>
               </div>
@@ -121,6 +143,8 @@
                 class="col-md-5 author-img"
                 style="background-image: url(images/Roku.png)"
                 data-scrollax=" properties: { translateY: '-70%'}"
+                role="img"
+                aria-label="Roku"
               ></div>
               <!-- <div class="col-md-2"></div> -->
               <div class="col-md-6 wrap ftco-animate">
@@ -129,13 +153,10 @@
                   <div class="p-5">
                     <h2 class="mb-6">Sr. Software Engineer (Front End)</h2>
                     <p>
-                      revamping and deliveringpackaged UI modules to be utilized
-                      at multiple application across Roku eco-system
+                      Defining and delivering shared UI modules used across the Roku ecosystem.
                     </p>
                     <p>
-                      Building a bridge between engineers and designer to
-                      cohesievely work on delivering great user on-boarding
-                      experiences
+                      Aligning design and engineering so onboarding and core flows ship with one voice.
                     </p>
                     <h5>Tech Stack</h5>
                     <ul class="ftco-footer-social list-unstyled mt-4">
@@ -198,6 +219,8 @@
                 class="col-md-5 author-img"
                 style="background-image: url(images/levi_logo.png)"
                 data-scrollax=" properties: { translateY: '-70%'}"
+                role="img"
+                aria-label="Levi Strauss &amp; Co."
               ></div>
               <!-- <div class="col-md-2"></div> -->
               <div class="col-md-6 wrap ftco-animate">
@@ -206,14 +229,10 @@
                   <div class="p-5">
                     <h2 class="mb-6">Front End Developer</h2>
                     <p>
-                      Defining new generation for Levi's and Dockers.com
-                      E-commerce user interface to facilitate fluid interactions
-                      and seamless user experiences across the board
+                      Shaping the next generation of Levi's and Dockers.com e-commerce: structure, interaction, and consistency.
                     </p>
                     <p>
-                      Being a part of great team and developing along with
-                      greater designers, developers and brand always emphasising
-                      on web accessibility, performance and code reuseability
+                      Partnering with design and brand on accessibility, performance, and reusable front-end.
                     </p>
                     <h5>Tech Stack</h5>
                     <ul class="ftco-footer-social list-unstyled mt-4">
@@ -279,6 +298,8 @@
                 class="col-md-4 author-img"
                 style="background-image: url(images/apple.png)"
                 data-scrollax=" properties: { translateY: '-70%'}"
+                role="img"
+                aria-label="Apple"
               ></div>
               <div class="col-md-1"></div>
               <div class="col-md-7 wrap ftco-animate">
@@ -287,12 +308,10 @@
                   <div class="p-5">
                     <h2 class="mb-5">User Experience Engineer</h2>
                     <p>
-                      Working with team of developers and intellectual to
-                      facilitate the in-house CMS system for Apple Online Store
+                      Design and implementation for the in-house CMS that powers Apple Online Store.
                     </p>
                     <p>
-                      Adhering to SCRUM and Agile methodology to deliver
-                      features and user interface implementations
+                      Scrum and Agile delivery of features and UI that meet product and quality bar.
                     </p>
                     <h5>Tech Stack</h5>
                     <ul class="ftco-footer-social list-unstyled mt-4">
@@ -337,6 +356,8 @@
                 class="col-md-4 author-img"
                 style="background-image: url(images/ssr.png)"
                 data-scrollax=" properties: { translateY: '-70%'}"
+                role="img"
+                aria-label="SSR Labs"
               ></div>
               <div class="col-md-2"></div>
               <div class="col-md-6 wrap ftco-animate">
@@ -345,9 +366,7 @@
                   <div class="p-5">
                     <h2 class="mb-5">UX Engineer</h2>
                     <p>
-                      Working closely with CTO in building the user interafce
-                      for the company that built energy efficient parallel
-                      processors and microchips
+                      Designing and building the UI for a company that builds energy-efficient parallel processors and microchips, in close partnership with the CTO.
                     </p>
                     <div class="invisible">
                       <p><a href="#">Check out my resume</a></p>
@@ -381,6 +400,8 @@
                 class="col-md-4 author-img"
                 style="background-image: url('images/sunnet_logo.png')"
                 data-scrollax=" properties: { translateY: '-70%'}"
+                role="img"
+                aria-label="Sun Net Inc."
               ></div>
               <div class="col-md-2"></div>
               <div class="col-md-6 wrap ftco-animate">
@@ -389,11 +410,7 @@
                   <div class="p-5">
                     <h2 class="mb-5">Front End Intern</h2>
                     <p>
-                      Developing dasbard components for reporting software
-                      product that provides energy outage information,
-                      scheduling and logging features for energy companies such
-                      as American Electric Power, Allete, American Transmission
-                      Company etc.
+                      Dashboard and reporting UI for an energy-outage and operations product used by utilities such as American Electric Power, Allete, and American Transmission Company.
                     </p>
                     <div class="invisible">
                       <ul class="ftco-footer-social list-unstyled mt-4">
@@ -431,8 +448,8 @@
           <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
               <div class="col-md-7 text-center heading-section ftco-animate">
-                <!-- <span>What i do</span> -->
-                <h2>Persona</h2>
+                <span>Design &amp; build</span>
+                <h2>How I work</h2>
               </div>
             </div>
             <div class="row">
@@ -440,13 +457,12 @@
                 <div
                   class="media block-6 services p-3 py-4 d-block text-center"
                 >
-                  <div class="icon mb-3"><span class="ion-code"></span></div>
+                  <div class="icon mb-3"><span class="ion-code" aria-hidden="true"></span></div>
                   <div class="media-body">
-                    <h3 class="heading">Front End / UI Development</h3>
-                    <h3 class="heading">Javascript (ES5, ES6)</h3>
-                    <h3 class="heading">React.JS, Vue.JS</h3>
-                    <h3 class="heading">HTML/HTML5</h3>
-                    <h3 class="heading">CSS/CSS3 (Sass, Less)</h3>
+                    <h3 class="heading">Front-end implementation</h3>
+                    <h3 class="heading">JavaScript (ES5, ES6)</h3>
+                    <h3 class="heading">React, Vue</h3>
+                    <h3 class="heading">HTML5, CSS3 (Sass, Less)</h3>
                   </div>
                 </div>
               </div>
@@ -455,15 +471,12 @@
                   class="media block-6 services p-3 py-4 d-block text-center"
                 >
                   <div class="icon mb-3">
-                    <span class="ion-paintbrush"></span>
+                    <span class="ion-paintbrush" aria-hidden="true"></span>
                   </div>
                   <div class="media-body">
-                    <h3 class="heading">UI/UX Design</h3>
-                    <h3 class="heading">
-                      Adobe Photoshop, Adobe Edge Animate, Adobe Illustrator
-                    </h3>
-                    <h3 class="heading">Figma</h3>
-                    <h3 class="heading">Zeplin</h3>
+                    <h3 class="heading">Product &amp; UI design</h3>
+                    <h3 class="heading">Figma, Adobe CC</h3>
+                    <h3 class="heading">Design systems, Zeplin</h3>
                   </div>
                 </div>
               </div>
@@ -471,13 +484,12 @@
                 <div
                   class="media block-6 services p-3 py-4 d-block text-center"
                 >
-                  <div class="icon mb-3"><span class="ion-coffee"></span></div>
+                  <div class="icon mb-3"><span class="ion-coffee" aria-hidden="true"></span></div>
                   <div class="media-body">
-                    <h3 class="heading">Guitarist</h3>
-                    <h3 class="heading">Bassist</h3>
-                    <h3 class="heading">NASM Certified Fitness Trainer</h3>
-                    <h3 class="heading">Aquascaper</h3>
-                    <h3 class="heading">Motorcyclist</h3>
+                    <h3 class="heading">Beyond work</h3>
+                    <h3 class="heading">Guitarist, bassist</h3>
+                    <h3 class="heading">NASM certified fitness trainer</h3>
+                    <h3 class="heading">Aquascaper, motorcyclist</h3>
                   </div>
                 </div>
               </div>
@@ -488,8 +500,8 @@
           <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
               <div class="col-md-7 text-center heading-section ftco-animate">
-                <span>School Projects</span>
-                <h2>Check out a few of my works</h2>
+                <span>Selected work</span>
+                <h2>A few projects</h2>
               </div>
             </div>
             <div class="row no-gutters">
@@ -510,13 +522,12 @@
                   </div>
                 </a>
                 <div class="text">
-                  <h4 class="subheading">Game Animation / Design</h4>
+                  <h4 class="subheading">Game animation / design</h4>
                   <h2 class="heading">
                     <a href="interact/content_creation.html">Little Fighter</a>
                   </h2>
                   <p>
-                    A fun little project involving DOM manipulation and Canvas
-                    animation
+                    DOM manipulation and canvas animation experiment.
                   </p>
                   <p>
                     <a href="interact/content_creation.html">View Project</a>
@@ -540,11 +551,10 @@
                   </div>
                 </a>
                 <div class="text order-1">
-                  <h4 class="subheading">Javascript/ HTML5 Game</h4>
+                  <h4 class="subheading">JavaScript / HTML5 game</h4>
                   <h2 class="heading"><a href="PingPong.html">Ping Pong</a></h2>
                   <p>
-                    Javascript manipulation of DOM and simple HTML5 game to
-                    enjoy
+                    DOM-driven HTML5 game.
                   </p>
                   <p><a href="PingPong.html">View Project</a></p>
                 </div>
@@ -562,16 +572,14 @@
                 </a>
                 <div class="text">
                   <h4 class="subheading">
-                    Web Development - Social Trip Advisor
+                    Web app — social trip advisor
                   </h4>
                   <h2 class="heading">Letz Go!</h2>
                   <p>
-                    An all-powerful trip advisory that combines concept ideas of
-                    Yelp and Four Square
+                    Trip advisory concept combining discovery and place-based info.
                   </p>
                   <p>
-                    A minimalistic design system implemented to provide maximum
-                    ease of use and straight forward information
+                    Minimal design system focused on clarity and ease of use.
                   </p>
                 </div>
               </div>
@@ -582,13 +590,14 @@
           class="ftco-section ftco-counter d-none"
           id="section-counter"
         ></section>
+        </main>
         <!--  done with body -->
         <footer class="ftco-footer ftco-bg-dark ftco-section">
           <div class="container">
             <div class="row mb-5 justify-content-center">
               <div class="col-md-5 text-center">
                 <div class="ftco-footer-widget mb-5">
-                  <h2 class="mb-3">Let's Connect</h2>
+                  <h2 class="mb-3">Let's connect</h2>
                   <ul class="ftco-footer-social list-unstyled">
                     <li class="ftco-animate">
                       <a href="https://www.linkedin.com/in/ygohil/"
